@@ -1,4 +1,4 @@
-module dataStructures
+module github.com/MDario123/dataStructures
 
 go 1.20
 

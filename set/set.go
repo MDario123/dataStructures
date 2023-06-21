@@ -1,6 +1,10 @@
 package set
 
-// Set Hash set implemented with an open-listing hash table based on Robin Hood Algorithm
+// Set of integers.
+//
+// Insert integers using Set.Insert,
+// Delete integers using Set.Delete,
+// Ask if an integers exists using Set.Exists
 type Set struct {
 	Size    int
 	Buckets []int

@@ -87,10 +87,10 @@ func (s *Uset) Delete(element uint) bool {
 	return done
 }
 
-// Exists Returns true if the element is in the set and false otherwise.
+// Exists Returns true if the element is in the set and false otherwise, also returns false if s is a nil pointer.
 func (s *Uset) Exists(element uint) bool {
 
-	if s.Size == 0 {
+	if (s == nil) || (s.Size == 0) {
 		return false
 	}
 

@@ -73,12 +73,12 @@ func (s *Uset) Delete(element uint) bool {
 			done = true
 			break
 		}
-		bucketId = (bucketId + 1) & uint(s.Cap()-1)
+		bucketId = (bucketId + 1) & (s.Cap() - 1)
 	}
 	if done {
 		for s.Buckets[bucketId] == 0 {
-			next := (bucketId + 1) & uint(s.Cap()-1)
-			if udist(s.Buckets[next], next, uint(s.Cap()-1)) > 0 {
+			next := (bucketId + 1) & (s.Cap() - 1)
+			if udist(s.Buckets[next], next, s.Cap()-1) > 0 {
 				s.Buckets[bucketId], s.Buckets[next] = s.Buckets[next], 0
 			}
 			bucketId = next
